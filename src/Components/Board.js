@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import Sidebar from './Sidebar';
-import {card} from './App';
-import './App.css';
+import {card} from '../App';
+import '../App.css';
 
 const visible = [];
 const targetNumber = [ null, null]
 
 function Board(props) {
-	
+
 	const [verifyFirst, setVerifyFirst] = useState(null);
 	const [verifySecond, setVerifySecond] = useState(null);
 	const [noClick, setNoClick] = useState(false);
@@ -19,7 +19,7 @@ function Board(props) {
 	const [winning, setWinning] = useState(true);
 	const [winningCount, setWinningCount] = useState(0);
 	const [gameWidth, setGameWidth] = useState(660);
-	
+
 	useEffect(function setBoardWidth() {
 		if (props.value === "64") {
 			setGameWidth(880)
@@ -51,9 +51,9 @@ function Board(props) {
 					setVerifySecond(null);
 				}, 1000);
 			}
-		
+
 	}, [verifyFirst, verifySecond, verifyCardTrue, winningCount]);
-	
+
 	const gamePlay = (event) => {
 
 		if (!gameStart) {
@@ -90,14 +90,14 @@ function Board(props) {
 
   return (
     <>
-	{winning ? 
+	{winning ?
 
 	<div className="right-sidebar">
 		<Sidebar timeValue={letTime} gameStart={gameStart} winning={winning} count={count} ></Sidebar>
 	</div>
 
 	: <></>}
-	{winning ? 
+	{winning ?
 		<div className="game-board" style={{width: gameWidth}} >
 			{card.map((cards, keys) => <div key={cards.id} className="card-column">
 				<div id={cards.id} onClick={!visible[keys] && !noClick ? (event) => gamePlay(event) : toManyClicks } className="first"> 

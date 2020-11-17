@@ -6,7 +6,7 @@ function Sidebar(props) {
 	const [minutes, setMinutes] = useState(null);
 
 	useEffect(function time() {
-	
+
 		if (props.gameStart && props.winning) {
 
 			const updatedTime = new Date().getTime();
@@ -14,11 +14,11 @@ function Sidebar(props) {
 			const sec = ("0" + (Math.floor(nowTime / 1000) % 60)).slice(-2);
 			const min = ("0" + (Math.floor(nowTime / 60000) % 60)).slice(-2);
 
-				const clock = setInterval(() => {	
+				const clock = setInterval(() => {
 					setSeconds(sec);
 					setMinutes(min);
 				}, 1000);
-				
+
 				return () => clearInterval(clock);
 		}
 	}, [seconds, props.gameStart, props.winning, props.timeValue]);
@@ -35,7 +35,7 @@ function Sidebar(props) {
 				<div className="count">{props.count}</div>
 			</div>
 
-		
+
 		</>
 	)
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import AudioPlayer from 'react-modular-audio-player';
-import {listArray} from './Data';
-import Board from './Board';
+import {listArray} from './Components/Data';
+import Board from './Components/Board';
 import './App.css';
 
 let random = 0;
@@ -21,7 +21,7 @@ let playlist = [
 
 
 function App() {
-	
+
 	const [start, setStart] = useState(true);
 	const [cardsNumbers, setCardsNumbers] = useState(null);
 
@@ -30,14 +30,14 @@ function App() {
 		const cardsNumber = e.target.id
 		setCardsNumbers(cardsNumber)
 		const newCardsArray = listArray.slice(0, cardsNumber);
-		
+
 		for (let i = 0; i < cardsNumber; i++) {
 			random = Math.floor(Math.random() * Math.floor(newCardsArray.length));
 			card.push(newCardsArray[random]);
 			newCardsArray.splice(random, 1);
 			card[i].id = i;
 		}
- 
+
 		setStart(false);
 	}
 
