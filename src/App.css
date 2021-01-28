@@ -6,10 +6,10 @@
 
 @font-face {
     font-family: 'Spartan';
-    src: url('./Components/Font/Spartan-Medium.eot');
-    src: url('./Components/Font/Spartan-Medium.eot?#iefix') format('embedded-opentype'),
-        url('./Components/Font/Spartan-Medium.woff2') format('woff2'),
-        url('./Components/Font/Spartan-Medium.woff') format('woff');
+    src: url('./Components/Data/Font/Spartan-Medium.eot');
+    src: url('./Components/Data/Font/Spartan-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./Components/Data/Font/Spartan-Medium.woff2') format('woff2'),
+        url('./Components/Data/Font/Spartan-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -17,10 +17,10 @@
 
 @font-face {
     font-family: 'Spartan';
-    src: url('./Components/Font/Spartan-Light.eot');
-    src: url('./Components/Font/Spartan-Light.eot?#iefix') format('embedded-opentype'),
-        url('./Components/Font/Spartan-Light.woff2') format('woff2'),
-        url('./Components/Font/Spartan-Light.woff') format('woff');
+    src: url('./Components/Data/Font/Spartan-Light.eot');
+    src: url('./Components/Data/Font/Spartan-Light.eot?#iefix') format('embedded-opentype'),
+        url('./Components/Data/Font/Spartan-Light.woff2') format('woff2'),
+        url('./Components/Data/Font/Spartan-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -28,10 +28,10 @@
 
 @font-face {
     font-family: 'Spartan';
-    src: url('./Components/Font/Spartan-Regular.eot');
-    src: url('./Components/Font/Spartan-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./Components/Font/Spartan-Regular.woff2') format('woff2'),
-        url('./Components/Font/Spartan-Regular.woff') format('woff');
+    src: url('./Components/Data/Font/Spartan-Regular.eot');
+    src: url('./Components/Data/Font/Spartan-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./Components/Data/Font/Spartan-Regular.woff2') format('woff2'),
+        url('./Components/Data/Font/Spartan-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -40,10 +40,10 @@
 
 @font-face {
     font-family: 'Spartan';
-    src: url('./Components/Font/Spartan-SemiBold.eot');
-    src: url('./Components/Font/Spartan-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('./Components/Font/Spartan-SemiBold.woff2') format('woff2'),
-        url('./Components/Font/Spartan-SemiBold.woff') format('woff');
+    src: url('./Components/Data/Font/Spartan-SemiBold.eot');
+    src: url('./Components/Data/Font/Spartan-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./Components/Data/Font/Spartan-SemiBold.woff2') format('woff2'),
+        url('./Components/Data/Font/Spartan-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;

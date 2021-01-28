@@ -1,7 +1,7 @@
 import React from 'react'
 import AudioPlayer from "react-modular-audio-player";
 
-import {playlist} from './playlist'
+import {playlist} from '../Data/playlist'
 
 function Musikplayer() {
   return (
