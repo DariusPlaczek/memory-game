@@ -1,13 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 
-import { Starting, Game, Win } from "./Pages/";
+import { Starting, Game } from "./Pages/";
 import rootReducer from "./rootReducer";
 import "./App.css";
 
-const store = createStore(rootReducer);
+//const store = createStore(rootReducer);
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer /* preloadedState, */, composeEnhancers());
 
 function App() {
   return (
@@ -17,9 +20,6 @@ function App() {
           <Switch>
             <Route path="/game">
               <Game />
-            </Route>
-            <Route path="/win">
-              <Win />
             </Route>
             <Route exact path="/">
               <Starting />

@@ -3,7 +3,9 @@ const DIFFICULT_GAME = "difficult/DIFFICULT_GAME";
 export const gameMode = (event) => ({ type: DIFFICULT_GAME, payload: event });
 
 const INITIAL_STATE = {
-  cards: 36,
+  numberOfCards: 12,
+  boardWidth: 660,
+  gameDifficult: "E"
 };
 
 function reducer(state = INITIAL_STATE, action) {
@@ -11,7 +13,10 @@ function reducer(state = INITIAL_STATE, action) {
     case DIFFICULT_GAME:
       return {
         ...state,
-        cards: action.payload,
+    //  numberOfCards: action.payload.numberOfCards,
+      numberOfCards: action.payload.numberOfCards,
+      boardWidth: action.payload.boardWidth,
+      gameDifficult: action.payload.gameDifficult
       };
 
     default:

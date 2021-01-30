@@ -1,30 +1,27 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import { listArray } from "../Data/data";
 
-let cacheArray = [];
 
 function useCreateCards() {
-  const bufferNumber = useSelector((state) => state.difficult.cards);
-  const [numberOfCards, setNumberOfCards] = useState(bufferNumber);
+  let cacheArray = [];
   const [{ cards }, setCards] = useState({ cards: [] });
-  const bufferArray = listArray.slice(0, numberOfCards);
-
-  const ran = useCallback(() => {
-    for (let i = numberOfCards; i > 0; i--) {
-      const random = Math.floor(Math.random() * i);
-      //setCards({cards: cards.push(bufferArray[random])})
-      cacheArray.push(bufferArray[random]);
-      setCards({ cards: cacheArray });
-      bufferArray.splice(random, 1);
-      setNumberOfCards((prev) => prev - 1);
-    }
-  }, [bufferArray, numberOfCards]);
+  const { numberOfCards } = useSelector((state) => state.difficult);
+  const randomNumberArray = [...Array(numberOfCards).keys()].sort(() => .5 - Math.random())
+  const [countArray, setCountArray] = useState(0)
 
   useEffect(() => {
-    ran();
-  }, [ran]);
+
+    if (countArray !== numberOfCards) {
+      for (let i = 0; i < numberOfCards; i++) {
+        cacheArray.push(listArray[randomNumberArray[i]]);
+        setCards({ cards: cacheArray });
+        setCountArray((prev) => prev + 1)
+      }
+    }
+  }, [numberOfCards, randomNumberArray, cacheArray, countArray])
+
 
   return { cards };
 }
