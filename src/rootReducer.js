@@ -4,8 +4,8 @@ import useGameConfig from './ReduxStore/gameConfig';
 import useGameResults from './ReduxStore/gameResults';
 
 const rootReducer = combineReducers({
-  difficult: useGameConfig,
-  win: useGameResults
+  gameConfig: useGameConfig,
+  gameResult: useGameResults
 });
 
 export default rootReducer;

@@ -8,8 +8,8 @@ function RightSidebar() {
   const [minutes, setMinutes] = useState(null);
   const [newDate, setNewDate] = useState(null);
 
-  const { count, gameStop } = useSelector((state) => state.win);
-  const { gameDifficult } = useSelector((state) => state.difficult)
+  const { count, gameStop } = useSelector((state) => state.gameResult);
+  const { gameDifficult } = useSelector((state) => state.gameConfig)
 
   const dispatch = useDispatch();
 

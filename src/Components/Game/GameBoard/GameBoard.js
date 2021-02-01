@@ -8,7 +8,7 @@ import { iWon, addCount, gameStop } from "../../../ReduxStore/gameResults";
 function GameBoard() {
   const dispatch = useDispatch();
   const { cards } = useCreateCards();
-  const { numberOfCards, boardWidth } = useSelector((state) => state.difficult);
+  const { numberOfCards, boardWidth } = useSelector((state) => state.gameConfig);
   const [firstClick, setFirstClick] = useState(false);
   const [addTheCards, setAddTheCards] = useState(true);
   const [showFirstCard, setShowFirstCard] = useState({ cardId: 0, cardKey: 0 });

@@ -7,7 +7,7 @@ import { listArray } from "../../../Data/data";
 function useCreateCards() {
   let cacheArray = [];
   const [{ cards }, setCards] = useState({ cards: [] });
-  const { numberOfCards } = useSelector((state) => state.difficult);
+  const { numberOfCards } = useSelector((state) => state.gameConfig);
   const randomNumberArray = [...Array(numberOfCards).keys()].sort(() => .5 - Math.random())
   const [countArray, setCountArray] = useState(0)
 

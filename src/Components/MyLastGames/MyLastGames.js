@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function MyLastGames() {
-  const { resultList } = useSelector((state) => state.win);
+  const { resultList } = useSelector((state) => state.gameResult);
 
  const copyEntity = resultList.slice()
  const entity  = copyEntity.reverse().slice(0,5)

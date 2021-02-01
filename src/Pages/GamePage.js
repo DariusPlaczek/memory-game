@@ -5,7 +5,7 @@ import {GameBoard, RightSidebar, EndGame} from '../Components/Game/'
 //import EndGame from "../Components/Game/EndGame";
 
 function GamePage() {
-  const { winValue } = useSelector((state) => state.win);
+  const { winValue } = useSelector((state) => state.gameConfig);
 
   const wellPlayer = () => {
     if (winValue) {
