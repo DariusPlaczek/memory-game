@@ -13,7 +13,6 @@ function reducer(state = INITIAL_STATE, action) {
     case DIFFICULT_GAME:
       return {
         ...state,
-    //  numberOfCards: action.payload.numberOfCards,
       numberOfCards: action.payload.numberOfCards,
       boardWidth: action.payload.boardWidth,
       gameDifficult: action.payload.gameDifficult

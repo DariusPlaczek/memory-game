@@ -1,52 +1,20 @@
+import localStore from '../Components/Game/localStore'
+
 const SET_WINNING = "/win/SET_WINNING";
 const ADD_COUNT = "/win/ADD_COUNT";
 const SET_GAMESTOP = "/win/SET_GAMESTOP"
 const ADD_NEW_RESULT = "/win/ADD_NEW_RESULT"
 const START_NEW_GAME = "/win/START_NEW_GAME"
 
+
 const INITIAL_STATE = {
   winValue: false,
   gameStop: false,
   count: 0,
-//  resultList: [1,2,3,4,5,6,7,8,9]
-  resultList: [
-    {
-      count: "19", 
-      time: "99:99",
-      difficult: 'H'
-    },
-    {
-      count: "29", 
-      time: "99:99",
-      difficult: 'H'
-    },
-    {
-      count: "39", 
-      time: "99:99",
-      difficult: 'H'
-    },
-    {
-      count: "49", 
-      time: "99:99",
-      difficult: 'E'
-    },
-    {
-      count: "59", 
-      time: "99:99",
-      difficult: 'H'
-    },
-    {
-      count: "69", 
-      time: "99:99",
-      difficult: 'E'
-    },
-    {
-      count: "79", 
-      time: "99:99",
-      difficult: 'E'
-    }
-]
+  resultList: localStore()
 };
+
+
 
 export const iWon = () => ({
   type: SET_WINNING,
@@ -68,6 +36,7 @@ export const startNewGame = () => ({
   type: START_NEW_GAME
 })
 
+
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case SET_WINNING:
@@ -88,7 +57,6 @@ function reducer(state = INITIAL_STATE, action) {
     case ADD_NEW_RESULT:
       return {
         ...state,
-        // resultList: state.resultList.push([{count: state.count, time: action.payload}])
         resultList: [...state.resultList, {count: state.count, time: action.payload.time, difficult: action.payload.difficult}]
       }
     case START_NEW_GAME:

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 
-import { Starting, Game } from "./Pages/";
+import { StartGame, Game } from "./Pages/";
 import rootReducer from "./rootReducer";
 import "./App.css";
 
@@ -22,7 +22,7 @@ function App() {
               <Game />
             </Route>
             <Route exact path="/">
-              <Starting />
+              <StartGame />
             </Route>
           </Switch>
         </Router>

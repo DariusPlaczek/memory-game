@@ -1,12 +1,20 @@
-import React from "react";
+import React,{ useEffect } from "react";
 import {Link} from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector } from 'react-redux'
 
 import {startNewGame} from '../../ReduxStore/winReducer'
+
 
 function Win() {
 
   const dispatch = useDispatch();
+  const {resultList} = useSelector((state) => state.win)
+
+  useEffect(() => {
+    if (resultList.length !== 0) {
+      return localStorage.setItem("memory", JSON.stringify(resultList))
+    }
+  }, [resultList])
 
   return (
     <div className="before-start">

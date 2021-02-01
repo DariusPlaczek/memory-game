@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import localstorrage from '../Components/Game/localstorrage'
 
 import { addResult } from "../ReduxStore/winReducer";
 
@@ -37,13 +36,14 @@ function RightSidebar() {
     [seconds, gameStop, newDate]
   );
 
+
   useEffect(() => {
+
     if (gameStop) {
-    //  localstorrage({count: 2, time: `${minutes}:${seconds}`, difficult: gameDifficult})
-      localstorrage([2, `${minutes}:${seconds}`, gameDifficult])
-      dispatch(addResult({time: `${minutes}:${seconds}`, difficult: gameDifficult}));
+      dispatch(addResult({time: `${minutes}:${seconds}`, difficult: gameDifficult}))
     }
-  }, [gameStop, minutes, seconds, dispatch, gameDifficult]);
+
+  }, [gameStop, dispatch, seconds, minutes, gameDifficult]);
 
   return (
     <div className="right-sidebar">
