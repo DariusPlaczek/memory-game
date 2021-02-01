@@ -1,2 +1,2 @@
-export { default as StartGame } from "./StartGame";
-export { default as Game } from "./GamePage";
+export { default as StartPage } from "./StartPage";
+export { default as GamePage } from "./GamePage";

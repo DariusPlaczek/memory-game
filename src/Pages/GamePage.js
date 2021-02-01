@@ -2,10 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import {GameBoard, RightSidebar, EndGame} from '../Components/Game/'
-//import EndGame from "../Components/Game/EndGame";
 
 function GamePage() {
-  const { winValue } = useSelector((state) => state.gameConfig);
+  const { winValue } = useSelector((state) => state.gameResult);
 
   const wellPlayer = () => {
     if (winValue) {

@@ -21,7 +21,7 @@ function EndGame() {
       <h1 className="spaceLacing">You win</h1>
       <hr />
       <div className="count wins">
-      <Link to="/">
+      <Link to="/react/memory">
           <button id="36" className="btn-fullsize slide" onClick={() => dispatch(startNewGame())}>NEW GAME</button>
         </Link>
       </div>

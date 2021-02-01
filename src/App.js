@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 
-import { StartGame, Game } from "./Pages/";
-import MyLastGames from "./Components/MyLastGames/MyLastGames";
-import Musikplayer from "./Components/Musikplayer/Musikplayer";
+import { StartPage, GamePage } from "./Pages/";
+import {LastGames, Musicplayer} from "./Components/"
+
 
 import rootReducer from "./rootReducer";
 import "./App.css";
@@ -23,15 +23,15 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="main-container">
-          <MyLastGames />
-          <Musikplayer />
+          <LastGames />
+          <Musicplayer />
 
           <Switch>
-            <Route path="/game">
-              <Game />
+            <Route path="/react/memory/game">
+              <GamePage />
             </Route>
-            <Route exact path="/">
-              <StartGame />
+            <Route exact path="/react/memory/">
+              <StartPage />
             </Route>
           </Switch>
         </div>

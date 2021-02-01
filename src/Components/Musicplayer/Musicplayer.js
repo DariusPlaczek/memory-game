@@ -3,7 +3,7 @@ import AudioPlayer from "react-modular-audio-player";
 
 import {playlist} from '../../Data/playlist'
 
-function Musikplayer() {
+function Musicplayer() {
   return (
     <div className="musik-player">
       <AudioPlayer hideForward={true} hideRewind={true} audioFiles={playlist} />
@@ -11,4 +11,4 @@ function Musikplayer() {
   )
 }
 
-export default Musikplayer
+export default Musicplayer

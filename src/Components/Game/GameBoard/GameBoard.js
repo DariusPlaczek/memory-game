@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import useCreateCards from "../GameLogic/useCreateCards";
+import useShuffledCards from "../GameLogic/useShuffledCards";
 import { iWon, addCount, gameStop } from "../../../ReduxStore/gameResults";
 
 
 function GameBoard() {
+
   const dispatch = useDispatch();
-  const { cards } = useCreateCards();
+  const { cards } = useShuffledCards();
   const { numberOfCards, boardWidth } = useSelector((state) => state.gameConfig);
   const [firstClick, setFirstClick] = useState(false);
   const [addTheCards, setAddTheCards] = useState(true);
   const [showFirstCard, setShowFirstCard] = useState({ cardId: 0, cardKey: 0 });
   const [showSecondCard, setShowSecondCard] = useState({ cardId: 0, cardKey: 0 });
-
   const [visible, setVisible] = useState(Array(numberOfCards).fill(false));
   const [stopClicks, setStopClicks] = useState(false);
 
@@ -83,7 +83,7 @@ function GameBoard() {
     }
 
     return (
-      <div id={key} onClick={(event) => flipCard(event)} className="first shadow-3" >
+      <div id={key} onClick={(event) => flipCard(event)} className="first" >
         {visible[value.id] ? <img src={value.img} alt=""></img> : ""}
       </div>
     );
@@ -95,7 +95,6 @@ function GameBoard() {
         cards.map((value, key) => (
           <div key={value.id} className="card-column shadow-10">
             {isClickable(value, key)}
-            <p>{value.pairKey}</p>
           </div>
         ))}
     </div>
