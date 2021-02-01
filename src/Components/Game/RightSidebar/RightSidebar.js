@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addResult } from "../ReduxStore/winReducer";
+import { addResult } from "../../../ReduxStore/gameResults";
 
 function RightSidebar() {
   const [seconds, setSeconds] = useState(null);

@@ -7,7 +7,6 @@ import { gameMode } from "../ReduxStore/gameConfig";
 function StartGame() {
   const dispatch = useDispatch();
 
-
   return (
     <div className="before-start">
       <h2>Welcome to</h2>

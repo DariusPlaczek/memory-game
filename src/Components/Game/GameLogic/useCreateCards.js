@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import { listArray } from "../Data/data";
+import { listArray } from "../../../Data/data";
 
 
 function useCreateCards() {

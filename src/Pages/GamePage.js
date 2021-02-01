@@ -1,26 +1,23 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import Game from "../Components/Game/GameLogic";
-import Win from "../Components/Game/Win";
-import RightSidebar from "../Components/RightSidebar";
-import LeftSidebar from '../Components/LeftSidebar'
+import {GameBoard, RightSidebar, EndGame} from '../Components/Game/'
+//import EndGame from "../Components/Game/EndGame";
 
 function GamePage() {
   const { winValue } = useSelector((state) => state.win);
 
   const wellPlayer = () => {
     if (winValue) {
-      return <Win />;
+      return <EndGame />;
     }
-    return <Game />;
+    return <GameBoard />;
   };
 
   return (
     <>
       {wellPlayer()}
       <RightSidebar />
-      <LeftSidebar />
     </>
   );
 }

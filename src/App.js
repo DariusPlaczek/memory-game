@@ -4,19 +4,28 @@ import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 
 import { StartGame, Game } from "./Pages/";
+import MyLastGames from "./Components/MyLastGames/MyLastGames";
+import Musikplayer from "./Components/Musikplayer/Musikplayer";
+
 import rootReducer from "./rootReducer";
 import "./App.css";
 
 //const store = createStore(rootReducer);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer /* preloadedState, */, composeEnhancers());
+const store = createStore(
+  rootReducer /* preloadedState, */,
+  composeEnhancers()
+);
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="main-container">
-        <Router>
+      <Router>
+        <div className="main-container">
+          <MyLastGames />
+          <Musikplayer />
+
           <Switch>
             <Route path="/game">
               <Game />
@@ -25,8 +34,8 @@ function App() {
               <StartGame />
             </Route>
           </Switch>
-        </Router>
-      </div>
+        </div>
+      </Router>
     </Provider>
   );
 }

@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import useDifficult from './ReduxStore/gameConfig';
-import useWin from './ReduxStore/winReducer';
+import useGameConfig from './ReduxStore/gameConfig';
+import useGameResults from './ReduxStore/gameResults';
 
 const rootReducer = combineReducers({
-  difficult: useDifficult,
-  win: useWin
+  difficult: useGameConfig,
+  win: useGameResults
 });
 
 export default rootReducer;

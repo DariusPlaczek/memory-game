@@ -2,7 +2,7 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 
-function LeftSidebar() {
+function MyLastGames() {
   const { resultList } = useSelector((state) => state.win);
 
  const copyEntity = resultList.slice()
@@ -25,4 +25,4 @@ function LeftSidebar() {
   );
 }
 
-export default LeftSidebar;
+export default MyLastGames;

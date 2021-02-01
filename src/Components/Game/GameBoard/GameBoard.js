@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import useCreateCards from "./useCreateCards";
-import { iWon, addCount, gameStop } from "../../ReduxStore/winReducer";
+import useCreateCards from "../GameLogic/useCreateCards";
+import { iWon, addCount, gameStop } from "../../../ReduxStore/gameResults";
 
 
-function GameLogic() {
+function GameBoard() {
   const dispatch = useDispatch();
   const { cards } = useCreateCards();
   const { numberOfCards, boardWidth } = useSelector((state) => state.difficult);
@@ -102,4 +102,4 @@ function GameLogic() {
   );
 }
 
-export default GameLogic;
+export default GameBoard;

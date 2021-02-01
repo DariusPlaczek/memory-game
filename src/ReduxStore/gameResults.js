@@ -1,10 +1,10 @@
-import localStore from '../Components/Game/localStore'
+import localStore from '../Data/localStore'
 
-const SET_WINNING = "/win/SET_WINNING";
-const ADD_COUNT = "/win/ADD_COUNT";
-const SET_GAMESTOP = "/win/SET_GAMESTOP"
-const ADD_NEW_RESULT = "/win/ADD_NEW_RESULT"
-const START_NEW_GAME = "/win/START_NEW_GAME"
+const SET_WINNING = "/gameResults/SET_WINNING";
+const ADD_COUNT = "/gameResults/ADD_COUNT";
+const SET_GAMESTOP = "/gameResults/SET_GAMESTOP"
+const ADD_NEW_RESULT = "/gameResults/ADD_NEW_RESULT"
+const START_NEW_GAME = "/gameResults/START_NEW_GAME"
 
 
 const INITIAL_STATE = {
@@ -13,8 +13,6 @@ const INITIAL_STATE = {
   count: 0,
   resultList: localStore()
 };
-
-
 
 export const iWon = () => ({
   type: SET_WINNING,
